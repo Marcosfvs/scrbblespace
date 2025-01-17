@@ -1,13 +1,13 @@
 {
   "project_info": {
-    "project_number": "544615558603",
-    "project_id": "scribblespace-2202f",
-    "storage_bucket": "scribblespace-2202f.appspot.com"
+    "project_number": "90553159529",
+    "project_id": "scribblespace-83961",
+    "storage_bucket": "scribblespace-83961.firebasestorage.app"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:544615558603:android:57c20c621386f3b4deda4e",
+        "mobilesdk_app_id": "1:90553159529:android:680266de7f933e8f6cf7f8",
         "android_client_info": {
           "package_name": "com.devspace.scribblespace"
         }
@@ -15,7 +15,7 @@
       "oauth_client": [],
       "api_key": [
         {
-          "current_key": "AIzaSyCbOa59kWl0a2LLf9AOqC0UA8hMzPulijk"
+          "current_key": "AIzaSyAwu-IFzOiyoAGpVP3b14NA4-IXxJ16XjA"
         }
       ],
       "services": {
