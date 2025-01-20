@@ -20,8 +20,8 @@ class NoteListViewModel internal constructor(
     private val dispatcher: CoroutineDispatcher = Dispatchers.IO
 ) : ViewModel() {
 
-    private val _uiNotes = MutableStateFlow<List<NoteUiData>>(emptyList())
-    val uiNotes: StateFlow<List<NoteUiData>> = _uiNotes.asStateFlow()
+    private val _uiNotes = MutableStateFlow<NoteListUIState>(NoteListUIState.Loading)
+    val uiNotes: StateFlow<NoteListUIState> = _uiNotes.asStateFlow()
 
     init {
         fetchNotes()
@@ -40,7 +40,12 @@ class NoteListViewModel internal constructor(
                         )
                     }
 
-                    _uiNotes.value = notesUiData
+                    if (notesUiData.isEmpty()) {
+                        _uiNotes.value = NoteListUIState.Empty
+                    } else {
+
+                        _uiNotes.value = NoteListUIState.Data(list = notesUiData)
+                    }
                 }
         }
     }
@@ -67,4 +72,11 @@ class NoteListViewModel internal constructor(
             }
         }
     }
+}
+
+sealed class NoteListUIState {
+    data object Loading : NoteListUIState()
+    data object Empty : NoteListUIState()
+    data class Data (val list: List<NoteUiData>) : NoteListUIState()
+
 }
